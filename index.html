@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Altos Executive Stay – Apartamento moderno con espacio de trabajo en Quetzaltenango, Guatemala. 3 habitaciones, vistas al volcán Santa María. Reserva directa.">
+  <title>Altos Executive Stay | Modern Apartment & Workspace · Quetzaltenango</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #fafaf8;
+      --bg2:     #f2ede6;
+      --bg3:     #ebe5dc;
+      --gold:    #b8924e;
+      --gold-l:  #c9a96e;
+      --text:    #1c1917;
+      --text2:   #3d3830;
+      --muted:   #6b6560;
+      --muted2:  #9a9290;
+      --serif:   'Cormorant Garamond', Georgia, serif;
+      --sans:    'Montserrat', system-ui, sans-serif;
+      --ease:    cubic-bezier(.4,0,.2,1);
+      --t:       .3s;
+      --pad:     100px;
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.7;overflow-x:hidden}
+    a{text-decoration:none;color:inherit}
+    ul{list-style:none}
+    button{cursor:pointer;border:none;background:none;font-family:inherit}
+    .container{max-width:1200px;margin:0 auto;padding:0 48px}
+    .container--sm{max-width:760px;margin:0 auto;padding:0 48px}
+    .label{display:block;font-size:.62rem;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+    .gold-bar{display:block;width:48px;height:1px;background:var(--gold)}
+    .gold-bar--c{margin:0 auto}
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+    .reveal.in{opacity:1;transform:translateY(0)}
+    .d1{transition-delay:.10s}.d2{transition-delay:.20s}.d3{transition-delay:.30s}.d4{transition-delay:.42s}
+    .btn{display:inline-block;font-size:.62rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;padding:15px 34px;transition:all var(--t) var(--ease);white-space:nowrap}
+    .btn-gold{background:var(--gold);color:#fff}
+    .btn-gold:hover{background:var(--gold-l);transform:translateY(-2px);box-shadow:0 10px 32px rgba(184,146,78,.28)}
+    .btn-outline{border:1px solid rgba(28,25,23,.22);color:var(--text2)}
+    .btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+    .hero-actions .btn-outline{border-color:rgba(244,239,231,.4);color:#f4efe7}
+    .hero-actions .btn-outline:hover{border-color:var(--gold-l);color:var(--gold-l)}
+
+    /* NAV */
+    #nav{position:fixed;inset:0 0 auto 0;z-index:200;padding:26px 48px;display:flex;align-items:center;justify-content:space-between;transition:all .65s var(--ease);border-bottom:1px solid transparent}
+    #nav.scrolled{padding:14px 48px;background:rgba(250,250,248,.97);backdrop-filter:blur(14px);border-bottom-color:rgba(184,146,78,.18);box-shadow:0 2px 24px rgba(0,0,0,.06)}
+    .nav-logo{font-family:var(--serif);font-size:1.18rem;font-weight:400;letter-spacing:.04em;line-height:1.2;color:#f4efe7}
+    .nav-logo span{color:var(--gold-l)}
+    .nav-logo small{display:block;font-family:var(--sans);font-size:.52rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,239,231,.55);margin-top:2px}
+    #nav.scrolled .nav-logo{color:var(--text)}
+    #nav.scrolled .nav-logo small{color:var(--muted2)}
+    .nav-links{display:flex;align-items:center;gap:34px}
+    .nav-links a{font-size:.65rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,239,231,.8);transition:color var(--t);position:relative}
+    .nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width .3s var(--ease)}
+    .nav-links a:hover{color:var(--gold-l)}
+    .nav-links a:hover::after{width:100%}
+    #nav.scrolled .nav-links a{color:var(--muted)}
+    #nav.scrolled .nav-links a:hover{color:var(--gold)}
+    .nav-cta{font-size:.6rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;padding:9px 22px;border:1px solid var(--gold-l);color:var(--gold-l);transition:all var(--t) var(--ease)}
+    .nav-cta:hover,.nav-cta:hover{background:var(--gold);color:#fff;border-color:var(--gold)}
+    .nav-cta::after{display:none!important}
+    #nav.scrolled .nav-cta{border-color:var(--gold);color:var(--gold)}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+    .hamburger span{width:24px;height:1px;background:#f4efe7;transition:all var(--t) var(--ease)}
+    #nav.scrolled .hamburger span{background:var(--text)}
+    .hamburger.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+    .hamburger.open span:nth-child(2){opacity:0}
+    .hamburger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+    #mobile-nav{display:none;position:fixed;inset:0;z-index:190;background:var(--bg);flex-direction:column;align-items:center;justify-content:center;gap:44px}
+    #mobile-nav.open{display:flex}
+    #mobile-nav a{font-family:var(--serif);font-size:2.6rem;font-weight:300;color:var(--text);transition:color var(--t)}
+    #mobile-nav a:hover{color:var(--gold)}
+
+    /* HERO */
+    #hero{position:relative;height:100vh;min-height:680px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;background:#080609;overflow:hidden;will-change:transform}
+    .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;pointer-events:none;opacity:.46;filter:saturate(.68) brightness(.78)}
+    .hero-scrim{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 85% 55% at 58% 35%,rgba(18,9,2,.70) 0%,transparent 65%),linear-gradient(160deg,rgba(7,5,3,.74) 0%,rgba(9,4,2,.68) 68%,rgba(3,2,1,.84) 100%)}
+    .hero-fade{position:absolute;bottom:0;left:0;right:0;height:220px;background:linear-gradient(transparent,#f2ede6);pointer-events:none}
+    .hero-content{position:relative;z-index:2;text-align:center;padding:0 24px;max-width:960px}
+    .hero-label{font-size:.6rem;font-weight:600;letter-spacing:.38em;text-transform:uppercase;color:var(--gold-l);margin-bottom:32px;opacity:0;animation:fadeUp 1s var(--ease) .25s forwards}
+    .hero-title{font-family:var(--serif);font-size:clamp(3.2rem,8vw,6.8rem);font-weight:300;line-height:1.0;color:#f4efe7;opacity:0;animation:fadeUp 1s var(--ease) .45s forwards}
+    .hero-title em{font-style:italic;color:var(--gold-l)}
+    .hero-title .sub-name{display:block;font-size:clamp(1.1rem,2.5vw,1.8rem);font-weight:300;font-style:italic;color:rgba(244,239,231,.55);letter-spacing:.04em;margin-top:10px}
+    .hero-tagline{font-family:var(--serif);font-size:clamp(.95rem,1.8vw,1.35rem);font-style:italic;color:#e5ddd0;opacity:0;margin:28px 0 52px;animation:fadeUp 1s var(--ease) .65s forwards}
+    .hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;opacity:0;animation:fadeUp 1s var(--ease) .85s forwards}
+    .hero-scroll-hint{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:9px;opacity:0;animation:fadeIn 1.2s var(--ease) 1.6s forwards}
+    .hero-scroll-hint span{font-size:.56rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-l);opacity:.65}
+    .scroll-bar{width:1px;height:44px;background:linear-gradient(to bottom,var(--gold),transparent);animation:scrollPulse 2.2s ease-in-out infinite}
+
+    /* SECTIONS */
+    section{padding:var(--pad) 0}
+    .s-header{margin-bottom:60px}
+    .s-header--c{text-align:center}
+    .s-header .label{margin-bottom:16px}
+    .s-title{font-family:var(--serif);font-weight:400;line-height:1.15;color:var(--text)}
+
+    /* APARTAMENTO */
+    #apartamento{background:var(--bg2)}
+    .apart-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+    .apart-copy .s-title{font-size:clamp(2rem,4vw,3.1rem);margin-bottom:28px}
+    .apart-copy p{font-size:.87rem;line-height:1.85;color:var(--muted);margin-bottom:15px}
+    .apart-copy .gold-bar{margin:30px 0}
+    .meta-row{display:flex;align-items:center;gap:13px;font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--text2);margin-bottom:14px}
+    .meta-row svg{color:var(--gold);flex-shrink:0}
+    .cards-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .fcard{background:#fff;border:1px solid rgba(184,146,78,.15);padding:28px 22px;position:relative;overflow:hidden;transition:transform var(--t) var(--ease),border-color var(--t) var(--ease),box-shadow var(--t) var(--ease)}
+    .fcard::before{content:'';position:absolute;top:0;left:0;width:2px;height:0;background:var(--gold);transition:height .45s var(--ease)}
+    .fcard:hover{transform:translateY(-5px);border-color:rgba(184,146,78,.35);box-shadow:0 18px 48px rgba(0,0,0,.08)}
+    .fcard:hover::before{height:100%}
+    .fcard-icon{width:38px;height:38px;color:var(--gold);margin-bottom:14px}
+    .fcard h3{font-family:var(--serif);font-size:1.12rem;font-weight:400;color:var(--text);margin-bottom:8px}
+    .fcard p{font-size:.78rem;color:var(--muted);line-height:1.65}
+
+    /* AMENIDADES */
+    #amenidades{padding:0}
+    .amen-header-wrap{background:var(--bg);padding:80px 0 64px}
+    .amen-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px}
+    .amen-cell{position:relative;height:360px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:36px 40px}
+    .amen-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .7s var(--ease)}
+    .amen-cell:hover .amen-bg{transform:scale(1.06)}
+    .amen-cell::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.88) 0%,rgba(0,0,0,.18) 55%,transparent 100%);z-index:1}
+    .amen-cell::after{content:attr(data-n);position:absolute;top:28px;right:32px;font-family:var(--serif);font-size:5rem;font-weight:300;color:rgba(201,169,110,.08);line-height:1;z-index:2}
+    .amen-body{position:relative;z-index:3}
+    .amen-icon{width:42px;height:42px;color:var(--gold-l);margin-bottom:16px;transition:transform .35s var(--ease)}
+    .amen-cell:hover .amen-icon{transform:translateY(-5px)}
+    .amen-cell h3{font-family:var(--serif);font-size:1.65rem;font-weight:400;color:#f4efe7;margin-bottom:8px}
+    .amen-cell p{font-size:.78rem;color:#e5ddd0;opacity:.82;line-height:1.65;max-width:290px}
+
+    /* VISTA */
+    #vista{background:var(--bg2);position:relative;overflow:hidden;padding:130px 0}
+    #vista::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(184,146,78,.05) 0%,transparent 65%)}
+    .vista-inner{position:relative;z-index:1;text-align:center;max-width:780px;margin:0 auto;padding:0 48px}
+    .vista-quote{font-family:var(--serif);font-size:clamp(1.7rem,3.8vw,2.9rem);font-weight:300;font-style:italic;color:var(--text);line-height:1.35;margin:30px 0}
+    .vista-quote em{font-style:normal;color:var(--gold)}
+    .volcano-art{display:flex;justify-content:center;margin:44px 0;opacity:.28}
+    .vista-body{font-size:.88rem;color:var(--muted);line-height:1.95}
+
+    /* CAROUSEL */
+    #carrusel{background:var(--bg);padding:var(--pad) 0}
+    .car-wrapper{position:relative;width:100%;height:62vh;min-height:400px;overflow:hidden;background:#111;margin-top:48px}
+    .car-slide{position:absolute;inset:0;opacity:0;transition:opacity .7s var(--ease)}
+    .car-slide.active{opacity:1}
+    .car-slide img{width:100%;height:100%;object-fit:cover;object-position:center}
+    .car-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.45) 0%,transparent 50%);pointer-events:none;z-index:2}
+    .car-info{position:absolute;bottom:24px;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:16px;z-index:4}
+    .car-label{font-size:.65rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#fff;background:var(--gold);padding:5px 14px}
+    .car-counter{font-size:.62rem;font-weight:500;letter-spacing:.18em;color:rgba(255,255,255,.7)}
+    .car-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:52px;height:52px;border:1.5px solid rgba(255,255,255,.45);background:rgba(0,0,0,.28);display:flex;align-items:center;justify-content:center;color:#fff;transition:all var(--t) var(--ease);backdrop-filter:blur(4px)}
+    .car-btn:hover{background:var(--gold);border-color:var(--gold)}
+    .car-prev{left:24px}
+    .car-next{right:24px}
+    .car-dots{position:absolute;bottom:60px;left:50%;transform:translateX(-50%);display:flex;gap:7px;z-index:4}
+    .car-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:all .3s;border:none}
+    .car-dot.active{background:#fff;transform:scale(1.3)}
+
+    /* GALERÍA */
+    #galeria{background:var(--bg2);padding-bottom:var(--pad)}
+    .gal-filters{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:52px}
+    .gal-pill{display:inline-flex;align-items:center;gap:7px;font-size:.6rem;font-weight:600;letter-spacing:.17em;text-transform:uppercase;padding:10px 22px;border:1px solid rgba(184,146,78,.25);color:var(--muted);background:transparent;cursor:pointer;transition:all var(--t) var(--ease);white-space:nowrap}
+    .gal-pill:hover{border-color:rgba(184,146,78,.5);color:var(--text)}
+    .gal-pill.active{background:var(--gold);border-color:var(--gold);color:#fff}
+    .gal-count{font-size:.52rem;opacity:.65;font-weight:400;letter-spacing:0}
+    .gal-pill.active .gal-count{opacity:.85}
+    .gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
+    .gal-card{position:relative;overflow:hidden;cursor:pointer;background:var(--bg3);aspect-ratio:4/3}
+    .gal-card.feat{grid-column:span 2;aspect-ratio:16/7}
+    .gal-card.hidden{display:none}
+    .gal-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .75s var(--ease)}
+    .gal-card:hover img{transform:scale(1.08)}
+    .gal-badge{position:absolute;top:14px;left:14px;z-index:3;font-size:.5rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:5px 12px;background:var(--gold);color:#fff;opacity:0;transform:translateY(-8px);transition:opacity .3s var(--ease),transform .3s var(--ease)}
+    .gal-card:hover .gal-badge{opacity:1;transform:translateY(0)}
+    .gal-hover{position:absolute;inset:0;background:rgba(0,0,0,.38);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .35s;z-index:2}
+    .gal-card:hover .gal-hover{opacity:1}
+    .gal-hover-icon{width:54px;height:54px;border:1.5px solid rgba(255,255,255,.7);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;transform:scale(.78);transition:transform .35s var(--ease)}
+    .gal-card:hover .gal-hover-icon{transform:scale(1)}
+
+    /* LIGHTBOX */
+    .lb{position:fixed;inset:0;z-index:900;background:rgba(3,2,1,.97);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:70px 20px 80px;opacity:0;pointer-events:none;transition:opacity .3s var(--ease)}
+    .lb.open{opacity:1;pointer-events:all}
+    .lb-top{position:absolute;top:0;left:0;right:0;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(201,169,110,.08)}
+    .lb-cat-tag{font-size:.56rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:#000;background:var(--gold);padding:5px 14px}
+    .lb-close{width:40px;height:40px;border:1px solid rgba(201,169,110,.25);display:flex;align-items:center;justify-content:center;color:#f4efe7;cursor:pointer;font-size:1.05rem;transition:all var(--t) var(--ease)}
+    .lb-close:hover{background:var(--gold);color:#000;border-color:var(--gold)}
+    .lb-img-wrap{flex:1;display:flex;align-items:center;justify-content:center;width:100%}
+    .lb-img{max-width:min(92vw,1280px);max-height:72vh;object-fit:contain;display:block;box-shadow:0 40px 100px rgba(0,0,0,.7);transition:opacity .18s}
+    .lb-img.fading{opacity:0}
+    .lb-bottom{position:absolute;bottom:0;left:0;right:0;padding:18px 24px;display:flex;align-items:center;justify-content:center;gap:14px;border-top:1px solid rgba(201,169,110,.08)}
+    .lb-arr{width:44px;height:44px;border:1px solid rgba(201,169,110,.22);display:flex;align-items:center;justify-content:center;color:#f4efe7;cursor:pointer;transition:all var(--t) var(--ease);flex-shrink:0}
+    .lb-arr:hover{background:var(--gold);color:#000;border-color:var(--gold)}
+    .lb-arr:disabled{opacity:.25;pointer-events:none}
+    .lb-counter{font-size:.64rem;font-weight:500;letter-spacing:.2em;color:#888;min-width:90px;text-align:center}
+    .lb-label{font-family:var(--serif);font-size:.95rem;font-style:italic;color:#e5ddd0;opacity:.7;flex:1;text-align:center}
+
+    /* REGLAS */
+    #reglas{background:var(--bg);padding:var(--pad) 0}
+    .reglas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:56px}
+    .reg-card{background:#fff;border:1px solid rgba(184,146,78,.12);padding:38px 30px;transition:border-color var(--t) var(--ease),box-shadow var(--t) var(--ease)}
+    .reg-card:hover{border-color:rgba(184,146,78,.3);box-shadow:0 12px 40px rgba(0,0,0,.06)}
+    .reg-card-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+    .reg-icon{width:44px;height:44px;border:1px solid rgba(184,146,78,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);flex-shrink:0}
+    .reg-card h3{font-family:var(--serif);font-size:1.3rem;font-weight:400;color:var(--text)}
+    .reg-time{font-size:2rem;font-family:var(--serif);font-weight:300;color:var(--gold);line-height:1;margin-bottom:8px}
+    .reg-card p{font-size:.8rem;color:var(--muted);line-height:1.7}
+    .reg-card ul{list-style:none;padding:0}
+    .reg-card ul li{font-size:.8rem;color:var(--muted);line-height:1.7;padding:5px 0;border-bottom:1px solid rgba(184,146,78,.08);display:flex;align-items:flex-start;gap:10px}
+    .reg-card ul li:last-child{border-bottom:none}
+    .reg-card ul li::before{content:'·';color:var(--gold);font-weight:700;flex-shrink:0}
+    .reg-wifi{font-size:.82rem;background:var(--bg2);padding:10px 14px;margin-top:10px;border-left:2px solid var(--gold)}
+    .reg-wifi strong{display:block;font-size:.58rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+    .reg-cap{grid-column:1/-1;background:var(--bg2);border:1px solid rgba(184,146,78,.2);padding:32px 40px;display:flex;align-items:center;gap:28px}
+    .reg-cap-num{font-family:var(--serif);font-size:4.5rem;font-weight:300;color:var(--gold);line-height:1;flex-shrink:0}
+    .reg-cap-text h3{font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--text);margin-bottom:8px}
+    .reg-cap-text p{font-size:.82rem;color:var(--muted);line-height:1.7}
+
+    /* DIRECTO */
+    #directo{background:var(--bg2)}
+    .directo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
+    .d-card{background:#fff;border:1px solid rgba(184,146,78,.1);padding:50px 40px;position:relative;border-top:2px solid transparent;transition:box-shadow var(--t) var(--ease),border-top-color var(--t) var(--ease)}
+    .d-card:hover{border-top-color:var(--gold);box-shadow:0 24px 60px rgba(0,0,0,.07)}
+    .d-num{font-family:var(--serif);font-size:4.5rem;font-weight:300;color:rgba(184,146,78,.1);line-height:1;margin-bottom:20px}
+    .d-icon{color:var(--gold);margin-bottom:18px}
+    .d-card h3{font-family:var(--serif);font-size:1.38rem;font-weight:400;color:var(--text);margin-bottom:14px}
+    .d-card p{font-size:.8rem;color:var(--muted);line-height:1.82}
+
+    /* CONTACTO */
+    #contacto{background:var(--bg)}
+    .wa-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:56px}
+    .wa-card{background:#fff;border:1px solid rgba(184,146,78,.12);padding:36px 32px;text-align:center;transition:border-color var(--t) var(--ease),transform var(--t) var(--ease)}
+    .wa-card:hover{border-color:rgba(184,146,78,.3);transform:translateY(-4px)}
+    .wa-card-icon{width:52px;height:52px;border:1px solid rgba(184,146,78,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);margin:0 auto 20px}
+    .wa-card:hover .wa-card-icon{background:rgba(184,146,78,.08);border-color:rgba(184,146,78,.4)}
+    .wa-card h4{font-family:var(--serif);font-size:1.15rem;font-weight:400;color:var(--text);margin-bottom:10px}
+    .wa-card p{font-size:.78rem;color:var(--muted);line-height:1.75}
+    .wa-cta-wrap{display:flex;flex-direction:column;align-items:center;gap:20px;margin-bottom:56px}
+    .wa-cta-btn{display:inline-flex;align-items:center;gap:14px;background:#25d366;color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;padding:20px 52px;transition:background var(--t),transform var(--t),box-shadow var(--t);box-shadow:0 6px 32px rgba(37,211,102,.28)}
+    .wa-cta-btn:hover{background:#1ebe5c;transform:translateY(-3px);box-shadow:0 12px 48px rgba(37,211,102,.42)}
+    .wa-cta-note{font-size:.7rem;font-weight:500;letter-spacing:.12em;color:var(--muted2)}
+    .wa-meta-row{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;padding-top:32px;border-top:1px solid rgba(184,146,78,.12)}
+    .wa-meta-item{display:flex;align-items:center;gap:9px;font-size:.78rem;color:var(--muted2);transition:color var(--t)}
+    .wa-meta-item:hover{color:var(--text2)}
+    .wa-meta-item svg{color:var(--gold);flex-shrink:0}
+    .wa-meta-sep{color:rgba(184,146,78,.3);font-size:1.2rem}
+
+    /* FOOTER */
+    footer{background:#060606;border-top:1px solid rgba(201,169,110,.1);padding:64px 0 32px}
+    .footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:56px;margin-bottom:56px}
+    .f-brand{font-family:var(--serif);font-size:1.3rem;font-weight:300;color:#f4efe7;margin-bottom:6px}
+    .f-brand span{color:var(--gold-l)}
+    .f-brand-sub{font-size:.58rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#666;margin-bottom:18px}
+    .f-tagline{font-size:.77rem;color:#666;line-height:1.8;margin-bottom:26px}
+    .socials{display:flex;gap:12px}
+    .social-a{width:36px;height:36px;border:1px solid rgba(201,169,110,.2);display:flex;align-items:center;justify-content:center;color:var(--gold-l);transition:all var(--t) var(--ease)}
+    .social-a:hover{background:var(--gold);color:#000;border-color:var(--gold)}
+    .f-col h4{font-size:.58rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-l);margin-bottom:22px}
+    .f-col ul li{margin-bottom:11px}
+    .f-col ul li a{font-size:.78rem;color:#666;transition:color var(--t)}
+    .f-col ul li a:hover{color:#f4efe7}
+    .f-addr{font-size:.75rem;color:#555;line-height:1.75;margin-top:20px}
+    .f-bottom{border-top:1px solid rgba(255,255,255,.05);padding-top:26px;display:flex;align-items:center;justify-content:space-between}
+    .f-bottom p{font-size:.7rem;color:#555}
+    .f-xela{font-size:.6rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-l);opacity:.55}
+
+    /* WA FLOAT */
+    .wa-btn{position:fixed;bottom:30px;right:30px;z-index:300;width:56px;height:56px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 22px rgba(37,211,102,.38);transition:transform var(--t),box-shadow var(--t);animation:waPulse 2.8s ease-in-out infinite}
+    .wa-btn:hover{transform:scale(1.12);box-shadow:0 8px 34px rgba(37,211,102,.55);animation:none}
+    .wa-btn svg{width:27px;height:27px;color:#fff}
+
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    @keyframes scrollPulse{0%,100%{opacity:.55;transform:scaleY(1)}50%{opacity:1;transform:scaleY(1.3)}}
+    @keyframes waPulse{0%,100%{box-shadow:0 4px 22px rgba(37,211,102,.38)}50%{box-shadow:0 4px 32px rgba(37,211,102,.62),0 0 0 8px rgba(37,211,102,.1)}}
+
+    @media(max-width:1024px){:root{--pad:80px}.container{padding:0 32px}.apart-grid{gap:48px}.footer-grid{gap:36px}}
+    @media(max-width:768px){
+      :root{--pad:64px}
+      .container,.container--sm{padding:0 22px}
+      #nav{padding:18px 22px}
+      #nav.scrolled{padding:13px 22px}
+      .nav-links{display:none}
+      .hamburger{display:flex}
+      .apart-grid{grid-template-columns:1fr;gap:44px}
+      .cards-grid,.amen-grid,.directo-grid,.wa-cards{grid-template-columns:1fr}
+      .reglas-grid{grid-template-columns:1fr}
+      .amen-cell{height:270px}
+      .gal-grid{grid-template-columns:repeat(2,1fr)}
+      .gal-card.feat{grid-column:span 2;aspect-ratio:16/9}
+      .reg-cap{flex-direction:column;text-align:center}
+      .footer-grid{grid-template-columns:1fr;gap:36px}
+      .f-bottom{flex-direction:column;gap:10px;text-align:center}
+      .wa-meta-sep{display:none}
+      .wa-meta-row{flex-direction:column;gap:16px}
+      .wa-cta-btn{padding:18px 36px;width:100%;justify-content:center}
+    }
+    @media(max-width:480px){
+      .hero-title{font-size:2.8rem}
+      .hero-actions{flex-direction:column;align-items:center}
+      .gal-grid{grid-template-columns:1fr}
+      .gal-card.feat{grid-column:span 1;aspect-ratio:4/3}
+      .gal-pill{padding:8px 14px;font-size:.54rem}
+      .lb-label{display:none}
+      .car-btn{width:38px;height:38px}
+    }
+  </style>
+</head>
+<body>
+
+  <a class="wa-btn" href="https://wa.me/50212345678?text=Hola%2C%20me%20interesa%20reservar%20en%20Altos%20Executive%20Stay" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <div id="mobile-nav">
+    <a href="#apartamento" onclick="closeMob()">El Apartamento</a>
+    <a href="#amenidades"  onclick="closeMob()">Amenidades</a>
+    <a href="#carrusel"    onclick="closeMob()">Galería</a>
+    <a href="#reglas"      onclick="closeMob()">Reglas</a>
+    <a href="#contacto"    onclick="closeMob()">Reservar</a>
+  </div>
+
+  <nav id="nav">
+    <a href="#hero" class="nav-logo">
+      Altos <span>Executive Stay</span>
+      <small>Modern Apartment &amp; Workspace · Xela</small>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#apartamento">El Apartamento</a></li>
+      <li><a href="#amenidades">Amenidades</a></li>
+      <li><a href="#carrusel">Galería</a></li>
+      <li><a href="#reglas">Reglas</a></li>
+      <li><a href="#contacto" class="nav-cta">Reservar</a></li>
+    </ul>
+    <div class="hamburger" id="hbg" onclick="toggleMob()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <section id="hero">
+    <div class="hero-bg" id="hero-bg">
+      <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+        <source src="https://res.cloudinary.com/dfonotyfb/video/upload/v1775585556/dds3_1_rqhg7x.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero-scrim"></div>
+    <div class="hero-fade"></div>
+    <div class="hero-content">
+      <p class="hero-label">Quetzaltenango, Guatemala &nbsp;·&nbsp; Reserva directa</p>
+      <h1 class="hero-title">
+        Altos <em>Executive</em> Stay
+        <span class="sub-name">Modern Apartment &amp; Workspace</span>
+      </h1>
+      <p class="hero-tagline">Productividad y confort al pie del volcán Santa María</p>
+      <div class="hero-actions">
+        <a href="#contacto"    class="btn btn-gold">Consultar disponibilidad</a>
+        <a href="#apartamento" class="btn btn-outline">Descubrir el espacio</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <div class="scroll-bar"></div>
+      <span>Explorar</span>
+    </div>
+  </section>
+
+  <section id="apartamento">
+    <div class="container">
+      <div class="apart-grid">
+        <div class="apart-copy reveal">
+          <span class="label">El espacio</span>
+          <h2 class="s-title" style="font-size:clamp(2rem,4vw,3rem);margin-top:16px;">
+            Un apartamento diseñado para<br>vivir y trabajar sin límites
+          </h2>
+          <div class="gold-bar" style="margin:28px 0;"></div>
+          <p>Altos Executive Stay es más que una estadía: es una base de operaciones premium en el corazón del altiplano guatemalteco. Tres habitaciones cuidadosamente equipadas, espacios de trabajo funcionales y rincones diseñados para el descanso real, todo en un solo lugar.</p>
+          <p>La cocina completamente equipada te invita a preparar lo que quieras. La sala de estar irradia calma. El comedor reúne a todos. Y desde cada ventana, Quetzaltenango se despliega como un cuadro vivo.</p>
+          <div class="gold-bar" style="margin:28px 0;"></div>
+          <div class="meta-row">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Sector exclusivo comercial · Quetzaltenango
+          </div>
+          <div class="meta-row">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+            Capacidad máxima para <strong style="color:var(--gold);margin-left:4px;">5 personas</strong>
+          </div>
+          <div class="meta-row">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Estancias cortas y largas disponibles
+          </div>
+          <div class="meta-row">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Check-in 3:00 pm · Check-out 11:00 am
+          </div>
+        </div>
+        <div class="cards-grid reveal d2">
+          <div class="fcard">
+            <svg class="fcard-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 22V12M21 22V12M12 2L2 12h20L12 2z"/><rect x="9" y="14" width="6" height="8"/></svg>
+            <h3>3 Habitaciones</h3>
+            <p>Suites amplias con ropa de cama de primera, closets completos y baños de acabados refinados.</p>
+          </div>
+          <div class="fcard">
+            <svg class="fcard-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20 9V6a2 2 0 00-2-2H6a2 2 0 00-2 2v3"/><path d="M2 11v4a2 2 0 002 2h16a2 2 0 002-2v-4a2 2 0 00-4 0H6a2 2 0 00-4 0z"/><line x1="12" y1="17" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg>
+            <h3>Sala &amp; Comedor</h3>
+            <p>Espacio luminoso, sofás de diseño, pantalla HD y ventanales con vistas panorámicas.</p>
+          </div>
+          <div class="fcard">
+            <svg class="fcard-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M2 20h20M4 20V8l8-5 8 5v12M10 20v-6h4v6"/><path d="M9 10h1v2H9zM14 10h1v2h-1z"/></svg>
+            <h3>Cocina Completa</h3>
+            <p>Electrodomésticos de primera, utensilios completos y todo lo que necesitas para cocinar.</p>
+          </div>
+          <div class="fcard">
+            <svg class="fcard-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <h3>Netflix Gratuito</h3>
+            <p>Acceso incluido a Netflix en el televisor de alta definición durante toda tu estadía.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="amenidades">
+    <div class="amen-header-wrap">
+      <div class="container">
+        <div class="s-header s-header--c reveal">
+          <span class="label">Más allá del cuarto</span>
+          <h2 class="s-title" style="font-size:clamp(2rem,4vw,2.9rem);margin-top:16px;">Amenidades exclusivas</h2>
+          <p style="font-size:.84rem;color:var(--muted);margin-top:18px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.85;">Cuatro espacios diseñados para que cada miembro del grupo encuentre exactamente lo que necesita.</p>
+        </div>
+      </div>
+    </div>
+    <div class="amen-grid">
+      <div class="amen-cell reveal" data-n="01">
+        <div class="amen-bg" style="background-image:url('img/terraza.jpg')"></div>
+        <div class="amen-body">
+          <svg class="amen-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M12 22V12"/></svg>
+          <h3>Terraza Privada</h3>
+          <p>Área de descanso al aire libre con vista directa al volcán Santa María. El lugar perfecto para el café de la mañana y las noches estrelladas de Xela.</p>
+        </div>
+      </div>
+      <div class="amen-cell reveal d1" data-n="02">
+        <div class="amen-bg" style="background-image:url('img/cowork area.avif')"></div>
+        <div class="amen-body">
+          <svg class="amen-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          <h3>Co-Working Space</h3>
+          <p>Escritorios ergonómicos, internet de alta velocidad y ambiente productivo. Trabaja desde Xela sin sacrificar rendimiento.</p>
+        </div>
+      </div>
+      <div class="amen-cell reveal d2" data-n="03">
+        <div class="amen-bg" style="background-image:url('img/juegos-01.jpg')"></div>
+        <div class="amen-body">
+          <svg class="amen-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="8" cy="6" r="3"/><circle cx="16" cy="6" r="3"/><path d="M4 20v-2a4 4 0 014-4h8a4 4 0 014 4v2"/></svg>
+          <h3>Área Infantil</h3>
+          <p>Zona segura y lúdica equipada para los más pequeños. Juguetes y entretenimiento para que los niños disfruten al máximo.</p>
+        </div>
+      </div>
+      <div class="amen-cell reveal d3" data-n="04">
+        <div class="amen-bg" style="background-image:url('img/gimnasio.jpg')"></div>
+        <div class="amen-body">
+          <svg class="amen-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          <h3>Gimnasio</h3>
+          <p>Equipamiento moderno para quienes no abandonan su rutina. Cardio, pesas y espacio para yoga con vista privilegiada.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="vista">
+    <div class="vista-inner">
+      <span class="label reveal">La experiencia Xela</span>
+      <blockquote class="vista-quote reveal d1">
+        "Despertar frente al <em>volcán Santa María</em><br>
+        no es solo una vista —<br>
+        es un privilegio que pocos conocen."
+      </blockquote>
+      <div class="volcano-art reveal d2" aria-hidden="true">
+        <svg width="560" height="90" viewBox="0 0 560 90">
+          <path fill="var(--gold)" d="M0,90 L0,65 L40,58 L80,52 L120,46 L170,38 L210,28 L240,16 L260,6 L280,0 L300,8 L320,20 L355,34 L400,44 L450,52 L500,60 L530,65 L560,68 L560,90 Z" opacity=".55"/>
+          <path fill="var(--gold)" d="M0,90 L0,72 L60,66 L120,60 L180,52 L220,44 L250,34 L270,22 L280,14 L290,24 L315,40 L360,52 L420,60 L480,66 L540,72 L560,74 L560,90 Z" opacity=".25"/>
+        </svg>
+      </div>
+      <p class="vista-body reveal d3">Desde las alturas del sector más exclusivo de Quetzaltenango, Altos Executive Stay te ofrece lo que pocas propiedades pueden prometer: un panorama sin interrupciones sobre la ciudad de Xela y el imponente volcán Santa María. Los atardeceres desde la terraza tiñen el cielo de tonos que ninguna fotografía captura del todo.</p>
+      <div style="margin-top:48px;" class="reveal d4">
+        <a href="#contacto" class="btn btn-gold">Reservar mi estadía</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARRUSEL -->
+  <section id="carrusel">
+    <div class="container">
+      <div class="s-header s-header--c reveal">
+        <span class="label">Recorre el espacio</span>
+        <h2 class="s-title" style="font-size:clamp(2rem,4vw,2.9rem);margin-top:16px;">Cada rincón, una experiencia</h2>
+        <p style="font-size:.84rem;color:var(--muted);margin-top:16px;line-height:1.85;">Un recorrido visual completo por todos los espacios del apartamento.</p>
+      </div>
+    </div>
+    <div class="car-wrapper" id="carWrapper">
+      <div class="car-overlay"></div>
+      <button class="car-btn car-prev" id="carPrev" aria-label="Anterior">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="car-btn car-next" id="carNext" aria-label="Siguiente">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+      <div class="car-dots" id="carDots"></div>
+      <div class="car-info">
+        <span class="car-label" id="carLabel"></span>
+        <span class="car-counter" id="carCounter"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section id="galeria">
+    <div class="container">
+      <div class="s-header s-header--c reveal" style="margin-bottom:48px;">
+        <span class="label">El espacio en imágenes</span>
+        <h2 class="s-title" style="font-size:clamp(2rem,4vw,2.9rem);margin-top:16px;">Galería</h2>
+        <p style="font-size:.84rem;color:var(--muted);margin-top:16px;line-height:1.85;">Selecciona una categoría para explorar cada rincón del apartamento.</p>
+      </div>
+      <div class="gal-filters reveal d1">
+        <button class="gal-pill active" data-filter="all">Todos <span class="gal-count">27</span></button>
+        <button class="gal-pill" data-filter="sala">Sala &amp; Comedor <span class="gal-count">4</span></button>
+        <button class="gal-pill" data-filter="habitacion">Habitaciones <span class="gal-count">5</span></button>
+        <button class="gal-pill" data-filter="cocina">Cocina <span class="gal-count">4</span></button>
+        <button class="gal-pill" data-filter="bano">Baño <span class="gal-count">2</span></button>
+        <button class="gal-pill" data-filter="terraza">Terraza &amp; Balcón <span class="gal-count">3</span></button>
+        <button class="gal-pill" data-filter="vista">La Vista <span class="gal-count">1</span></button>
+        <button class="gal-pill" data-filter="cowork">Coworking <span class="gal-count">4</span></button>
+        <button class="gal-pill" data-filter="espacios">Gimnasio &amp; Juegos <span class="gal-count">2</span></button>
+        <button class="gal-pill" data-filter="lobby">Entrada &amp; Lobby <span class="gal-count">2</span></button>
+      </div>
+    </div>
+    <div class="gal-grid" id="galGrid">
+      <!-- SALA -->
+      <div class="gal-card feat" data-cat="sala" data-label="Sala principal" data-src="img/sala-01.jpg">
+        <img src="img/sala-01.jpg" alt="Sala principal" onerror="this.style.opacity='0'">
+        <div class="gal-badge">Sala &amp; Comedor</div>
+        <div class="gal-hover"><div class="gal-hover-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      <div class="gal-card" data-cat="sala" data-label="Sala de estar" data-src="img/sala-02.jpeg">
+        <img src="img/sala-02.jpeg" alt="Sala de estar" onerror="this.style.opacity='0'">
+        <div class="gal-badge">Sala &amp; Comedor</div>
+        <div class="gal-hover"><div class="gal-hover-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      <div class="gal-card" data-cat="sala" data-label="Sala vista 2" data-src="img/sala-03.jpeg">
+        <img src="img/sala-03.jpeg" alt="Sala vista 2" onerror="this.style.opacity='0'">
+        <div class="gal-badge">Sala &amp; Comedor</div>
+        <div class="gal-hover"><div class="gal-hover-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      <div class="gal-card" data-cat="sala" data-label="Sala vista 3" data-src="img/sala-04.jpeg">
+        <img src="img/sala-04.jpeg" alt="Sala vista 3" onerror="this.style.opacity='0'">
+        <div class="gal-badge">Sala &amp; Comedor</div>
+        <div class="gal-hover"><div class="gal-hover-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      <!-- HABITACIONES -->
+      <div class="gal-card feat" data-cat="habitacion" data-label="Habitación principal" data-src="img/habitacion.jpg">
+        <img src="img/habitacion.jpg" alt="Habitación principal" onerror="this.style.opacity='0'">
+        <div class="gal-badge">Habitaciones</div>
+        <div class="gal-hover"><div class="gal-hover-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      <div class="gal-card" data-cat="habitacion" data-label="Habitación 1" data-src="img/habitacion-01.jpeg">
+        <img src="img/habitacion-01.jpeg" alt="Habitación 1" onerror="this.style.opacity='0'">
+        <div class="gal-badge">Habitaciones</div>
+        <div class="gal-hover"><div class="gal-hover-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      <div class="gal-card" data-cat="habitacion" data-label="Habitación 2" data-src="img/habitacion-02.jpeg">
+        <img src="img/habitacion-02.jpeg" alt="Habitación 2" onerror="this.style.opacity='0'">
+        <div class="gal-badge">Habitaciones</div>
+        <div class="gal-hover"><div class="gal-hover-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      <div class="gal-card" data-cat="habitacion" data-label="Habitación 3" data-src="img/habitacion-03.jpeg">
+        <img src="img/habitacion-03.jpeg" alt="Habitación 3" onerror="this.style.opacity='0'">
+        <div class="gal-badge">Habitaciones</div>
+        <div class="gal-hover"><div class="gal-hover-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      <div class="gal-card" data-cat="habitacion" data-label="Habitación 4" data-src="img/habitacion-04.jpeg">
+        <img src="img/habitacion-04.jpeg" alt="Habitación 4" onerror="this.style.opacity='0'">
+        <div class="gal-badge">Habitaciones</div>
+        <div class="gal-hover"><div class="gal-hover-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      <!-- COCINA -->
+      <div class="gal-card feat" data-cat="cocina" data-label="Cocina equipada" data-src="img/cocina-01.jpg">
+        <img src="img/cocina-01.jpg" alt="Cocina equipada" onerror="this.style.opacity='0'">
+        <div class="gal-badge">Cocina</div>
+        <div class="gal-hover"><div class="gal-hover-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      <div class="gal-card" data-cat="cocina" data-label="Cocina vista 2" data-src="img/cocina-01.jpeg">
+        <img src="img/cocina-01.jpeg" alt="Cocina vista 2" onerror="this.style.opacity='0'">
+        <div class="gal-badge">Cocina</div>
+        <div class="gal-hover"><div class="gal-hover-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      <div class="gal-card" data-cat="cocina" data-label="Cocina detalles" data-src="img/cocina-02.jpeg">
+        <img src="img/cocina-02.jpeg" alt="Cocina detalles" onerror="this.style.opacity='0'">
+        <div class="gal-badge">Cocina</div>
+        <div class="gal-hover"><div class="gal-hover-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      <div class="gal-card" data-cat="cocina" data-label="Cocina vista 3" data-src="img/cocina-03.jpeg">
+        <img src="img/cocina-03.jpeg" alt="Cocina vista 3" onerror="this.style.opacity='0'">
+        <div class="gal-badge">Cocina</div>
+        <div class="gal-hover"><div class="gal-hover-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      <!-- BAÑO -->
+      <div class="gal-card" data-cat="bano" data-label="Baño" data-src="img/baño.jpg">
+        <img src="img/baño.jpg" alt="Baño" onerror="this.style.opacity='0'">
+        <div class="gal-badge">Baño</div>
+        <div class="gal-hover"><div class="gal-hover-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      <div class="gal-card" data-cat="bano" data-label="Baño completo" data-src="img/baño-01.jpeg">
+        <img src="img/baño-01.jpeg" alt="Baño completo" onerror="this.style.opacity='0'">
+        <div class="gal-badge">Baño</div>
+        <div class="gal-hover"><div class="gal-hover-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      <!-- TERRAZA -->
+      <div class="gal-card feat" data-cat="terraza" data-label="Terraza privada" data-src="img/terraza.jpg">
+        <img src="img/terraza.jpg" alt="Terraza privada" onerror="this.style.opacity='0'">
+        <div class="gal-badge">Terraza &amp; Balcón</div>
+        <div class="gal-hover"><div class="gal-hover-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      <div class="gal-card" data-cat="terraza" data-label="Terraza vista 2" data-src="img/terraza2.jpg">
+        <img src="img/terraza2.jpg" alt="Terraza vista 2" onerror="this.style.opacity='0'">
+        <div class="gal-badge">Terraza &amp; Balcón</div>
+        <div class="gal-hover"><div class="gal-hover-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      <div class="gal-card" data-cat="terraza" data-label="Balcón" data-src="img/balcon-01.jpeg">
+        <img src="img/balcon-01.jpeg" alt="Balcón" onerror="this.style.opacity='0'">
+        <div class="gal-badge">Terraza &amp; Balcón</div>
+        <div class="gal-hover"><div class="gal-hover-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      <!-- VISTA -->
+      <div class="gal-card feat" data-cat="vista" data-label="Vista al volcán Santa María" data-src="img/vista-01.jpg">
+        <img src="img/vista-01.jpg" alt="Vista al volcán Santa María" onerror="this.style.opacity='0'">
+        <div class="gal-badge">La Vista</div>
+        <div class="gal-hover"><div class="gal-hover-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      <!-- COWORKING -->
+      <div class="gal-card feat" data-cat="cowork" data-label="Co-Working Space" data-src="img/cowork area.avif">
+        <img src="img/cowork area.avif" alt="Co-Working Space" onerror="this.style.opacity='0'">
+        <div class="gal-badge">Coworking</div>
+        <div class="gal-hover"><div class="gal-hover-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      <div class="gal-card" data-cat="cowork" data-label="Área de trabajo 2" data-src="img/cowork area2.avif">
+        <img src="img/cowork area2.avif" alt="Área de trabajo 2" onerror="this.style.opacity='0'">
+        <div class="gal-badge">Coworking</div>
+        <div class="gal-hover"><div class="gal-hover-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      <div class="gal-card" data-cat="cowork" data-label="Área de trabajo 3" data-src="img/cowork area3.avif">
+        <img src="img/cowork area3.avif" alt="Área de trabajo 3" onerror="this.style.opacity='0'">
+        <div class="gal-badge">Coworking</div>
+        <div class="gal-hover"><div class="gal-hover-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      <div class="gal-card" data-cat="cowork" data-label="Área de trabajo 4" data-src="img/cowork area4.avif">
+        <img src="img/cowork area4.avif" alt="Área de trabajo 4" onerror="this.style.opacity='0'">
+        <div class="gal-badge">Coworking</div>
+        <div class="gal-hover"><div class="gal-hover-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      <!-- GIMNASIO & JUEGOS -->
+      <div class="gal-card" data-cat="espacios" data-label="Gimnasio" data-src="img/gimnasio.jpg">
+        <img src="img/gimnasio.jpg" alt="Gimnasio" onerror="this.style.opacity='0'">
+        <div class="gal-badge">Gimnasio &amp; Juegos</div>
+        <div class="gal-hover"><div class="gal-hover-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      <div class="gal-card" data-cat="espacios" data-label="Área Infantil" data-src="img/juegos-01.jpg">
+        <img src="img/juegos-01.jpg" alt="Área Infantil" onerror="this.style.opacity='0'">
+        <div class="gal-badge">Gimnasio &amp; Juegos</div>
+        <div class="gal-hover"><div class="gal-hover-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      <!-- LOBBY -->
+      <div class="gal-card" data-cat="lobby" data-label="Entrada del apartamento" data-src="img/Entrada-01.jpeg">
+        <img src="img/Entrada-01.jpeg" alt="Entrada" onerror="this.style.opacity='0'">
+        <div class="gal-badge">Entrada &amp; Lobby</div>
+        <div class="gal-hover"><div class="gal-hover-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+      <div class="gal-card" data-cat="lobby" data-label="Lobby del edificio" data-src="img/Lobby edificio.jpg">
+        <img src="img/Lobby edificio.jpg" alt="Lobby del edificio" onerror="this.style.opacity='0'">
+        <div class="gal-badge">Entrada &amp; Lobby</div>
+        <div class="gal-hover"><div class="gal-hover-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Vista ampliada">
+    <div class="lb-top">
+      <span class="lb-cat-tag" id="lbCat">Categoría</span>
+      <button class="lb-close" id="lbClose" aria-label="Cerrar">&#x2715;</button>
+    </div>
+    <div class="lb-img-wrap">
+      <img class="lb-img" id="lbImg" src="" alt="">
+    </div>
+    <div class="lb-bottom">
+      <button class="lb-arr" id="lbPrev" aria-label="Anterior">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <span class="lb-label" id="lbLabel"></span>
+      <span class="lb-counter" id="lbCounter">1 / 27</span>
+      <button class="lb-arr" id="lbNext" aria-label="Siguiente">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- REGLAS -->
+  <section id="reglas">
+    <div class="container">
+      <div class="s-header s-header--c reveal">
+        <span class="label">Información de tu estadía</span>
+        <h2 class="s-title" style="font-size:clamp(2rem,4vw,2.9rem);margin-top:16px;">Reglas &amp; Bienvenida</h2>
+        <p style="font-size:.84rem;color:var(--muted);margin-top:16px;line-height:1.85;">Todo lo que necesitas saber para disfrutar al máximo.</p>
+      </div>
+      <div class="reglas-grid reveal d1">
+
+        <div class="reg-card">
+          <div class="reg-card-head">
+            <div class="reg-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg></div>
+            <h3>Check-in</h3>
+          </div>
+          <div class="reg-time">3:00 pm</div>
+          <p>Horario de entrada. Si llegas antes, contáctanos y lo coordinamos directamente por WhatsApp.</p>
+        </div>
+
+        <div class="reg-card">
+          <div class="reg-card-head">
+            <div class="reg-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg></div>
+            <h3>Check-out</h3>
+          </div>
+          <div class="reg-time">11:00 am</div>
+          <ul>
+            <li>Apague todas las luces</li>
+            <li>Cierre todas las ventanas y puertas</li>
+            <li>Coloque los platos en el lavaplatos</li>
+            <li>Revise que no se le haya olvidado nada</li>
+            <li>Deje las llaves y tarjeta sobre la mesa del comedor</li>
+          </ul>
+        </div>
+
+        <div class="reg-card">
+          <div class="reg-card-head">
+            <div class="reg-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12.55a11 11 0 0114.08 0"/><path d="M1.42 9a16 16 0 0121.16 0"/><path d="M8.53 16.11a6 6 0 016.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg></div>
+            <h3>WiFi</h3>
+          </div>
+          <div class="reg-wifi"><strong>Red</strong>CLARO_5GHz_23FD50</div>
+          <div class="reg-wifi" style="margin-top:8px;"><strong>Contraseña</strong>*DayZAt+=Kv6UxN</div>
+        </div>
+
+        <div class="reg-card">
+          <div class="reg-card-head">
+            <div class="reg-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+            <h3>Netflix</h3>
+          </div>
+          <p style="margin-bottom:12px;">Netflix gratuito incluido en tu estadía.</p>
+          <div class="reg-wifi"><strong>Cómo acceder</strong>Ingresa al perfil número <strong>809</strong> en el televisor</div>
+        </div>
+
+        <div class="reg-card">
+          <div class="reg-card-head">
+            <div class="reg-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+            <h3>Reglas del Hospedaje</h3>
+          </div>
+          <ul>
+            <li>No se permiten mascotas</li>
+            <li>No fumar dentro del apartamento</li>
+            <li>No fiestas ni eventos</li>
+            <li>No música a alto volumen después de las 10:00 pm</li>
+            <li>No incluye servicio de lavadora (fuera de servicio actualmente)</li>
+            <li>Manchas en ropa de cama o toallas generan cobro extra de limpieza</li>
+          </ul>
+        </div>
+
+        <div class="reg-cap reveal d2">
+          <div class="reg-cap-num">5</div>
+          <div class="reg-cap-text">
+            <h3>Capacidad máxima</h3>
+            <p>El apartamento tiene capacidad para un máximo de <strong>5 personas</strong>. Este límite garantiza la comodidad de todos los huéspedes y el cuidado del espacio. Por favor indícanos el número de personas al momento de reservar.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUÉ DIRECTO -->
+  <section id="directo">
+    <div class="container">
+      <div class="s-header s-header--c reveal">
+        <span class="label">Sin intermediarios</span>
+        <h2 class="s-title" style="font-size:clamp(2rem,4vw,2.9rem);margin-top:16px;">¿Por qué reservar directamente?</h2>
+        <p style="font-size:.84rem;color:var(--muted);margin-top:18px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.85;">Sin Airbnb. Sin Booking. Sin comisiones que inflan el precio.</p>
+      </div>
+      <div class="directo-grid">
+        <div class="d-card reveal">
+          <div class="d-num">01</div>
+          <div class="d-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+          <h3>Mejor precio garantizado</h3>
+          <p>Al reservar directo eliminas comisiones de plataformas que pueden sumar hasta un 20%. El precio que acordamos es el que pagas, sin sorpresas.</p>
+        </div>
+        <div class="d-card reveal d1">
+          <div class="d-num">02</div>
+          <div class="d-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <h3>Trato completamente personalizado</h3>
+          <p>Hablas con el propietario directamente. Puedes hacer preguntas reales, pedir arreglos especiales y negociar estadías a tu medida.</p>
+        </div>
+        <div class="d-card reveal d2">
+          <div class="d-num">03</div>
+          <div class="d-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+          <h3>Comunicación directa e inmediata</h3>
+          <p>Sin tickets ni chatbots. Un mensaje de WhatsApp y tienes respuesta real. Antes, durante y después de tu estadía.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="container">
+      <div class="s-header s-header--c reveal" style="margin-bottom:72px;">
+        <span class="label">Reservas directas</span>
+        <h2 class="s-title" style="font-size:clamp(2rem,4vw,3rem);margin-top:16px;">
+          Planeemos tu <em style="font-family:var(--serif);font-style:italic;color:var(--gold);">estadía perfecta</em>
+        </h2>
+        <p style="font-size:.88rem;color:var(--muted);margin-top:20px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.9;">Sin formularios, sin esperas. Escríbenos por WhatsApp y te respondemos en menos de 2 horas.</p>
+      </div>
+      <div class="wa-cards reveal">
+        <div class="wa-card">
+          <div class="wa-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+          <h4>Fechas &amp; disponibilidad</h4>
+          <p>Dinos cuándo llegas y cuándo sales. Confirmamos disponibilidad al instante.</p>
+        </div>
+        <div class="wa-card">
+          <div class="wa-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <h4>Número de huéspedes</h4>
+          <p>Cuéntanos cuántos viajan (máximo 5 personas). Ajustamos todo para su comodidad.</p>
+        </div>
+        <div class="wa-card">
+          <div class="wa-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+          <h4>Requerimientos especiales</h4>
+          <p>¿Algo específico que necesites? Lo conversamos y lo resolvemos juntos.</p>
+        </div>
+      </div>
+      <div class="wa-cta-wrap reveal d2">
+        <a class="wa-cta-btn" href="https://wa.me/50212345678?text=Hola!%20Me%20interesa%20reservar%20en%20Altos%20Executive%20Stay" target="_blank" rel="noopener noreferrer">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Reservar por WhatsApp
+        </a>
+        <p class="wa-cta-note">+502 XXXX XXXX &nbsp;·&nbsp; Respondemos en menos de 2 horas</p>
+      </div>
+      <div class="wa-meta-row reveal d3">
+        <div class="wa-meta-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          hola@altosexecutivestay.com
+        </div>
+        <div class="wa-meta-sep">·</div>
+        <div class="wa-meta-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Sector Comercial Exclusivo, Quetzaltenango
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="f-brand">Altos <span>Executive Stay</span></div>
+          <div class="f-brand-sub">Modern Apartment &amp; Workspace</div>
+          <p class="f-tagline">Estadía premium en el corazón del altiplano guatemalteco.<br>Trato directo, experiencia extraordinaria.</p>
+          <div class="socials">
+            <a href="#" class="social-a" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="#" class="social-a" aria-label="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            <a href="https://wa.me/50212345678" class="social-a" aria-label="WhatsApp"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+          </div>
+        </div>
+        <div class="f-col">
+          <h4>El apartamento</h4>
+          <ul>
+            <li><a href="#apartamento">El espacio</a></li>
+            <li><a href="#amenidades">Amenidades</a></li>
+            <li><a href="#vista">La vista</a></li>
+            <li><a href="#carrusel">Galería</a></li>
+            <li><a href="#reglas">Reglas de estadía</a></li>
+          </ul>
+        </div>
+        <div class="f-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="#contacto">Solicitar reserva</a></li>
+            <li><a href="https://wa.me/50212345678">WhatsApp directo</a></li>
+            <li><a href="mailto:hola@altosexecutivestay.com">Correo electrónico</a></li>
+          </ul>
+          <p class="f-addr">Sector Comercial Exclusivo<br>Quetzaltenango, Guatemala<br><span style="color:var(--gold-l);opacity:.65;">C.A.</span></p>
+        </div>
+      </div>
+      <div class="f-bottom">
+        <p>© 2025 Altos Executive Stay. Todos los derechos reservados.</p>
+        <span class="f-xela">Quetzaltenango · Guatemala · Altiplano</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* NAV */
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 55), { passive: true });
+
+    /* PARALLAX */
+    const heroBg = document.getElementById('hero-bg');
+    const heroEl = document.getElementById('hero');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY < heroEl.offsetHeight)
+        heroBg.style.transform = `scale(1.14) translateY(${(window.scrollY / heroEl.offsetHeight) * 16}%)`;
+    }, { passive: true });
+
+    /* REVEAL */
+    const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }), { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    /* MOBILE NAV */
+    const hbg = document.getElementById('hbg');
+    const mobileNav = document.getElementById('mobile-nav');
+    function toggleMob() { const o = mobileNav.classList.toggle('open'); hbg.classList.toggle('open', o); document.body.style.overflow = o ? 'hidden' : ''; }
+    function closeMob() { mobileNav.classList.remove('open'); hbg.classList.remove('open'); document.body.style.overflow = ''; }
+
+    /* CAROUSEL */
+    (function() {
+      const slides = [
+        { src: 'img/sala-01.jpg',         label: 'Sala principal',       cat: 'Sala & Comedor' },
+        { src: 'img/habitacion.jpg',       label: 'Habitación principal', cat: 'Habitaciones' },
+        { src: 'img/cocina-01.jpg',        label: 'Cocina equipada',      cat: 'Cocina' },
+        { src: 'img/vista-01.jpg',         label: 'Vista al volcán',      cat: 'La Vista' },
+        { src: 'img/terraza.jpg',          label: 'Terraza privada',      cat: 'Terraza' },
+        { src: 'img/cowork area.avif',     label: 'Co-Working Space',     cat: 'Coworking' },
+        { src: 'img/gimnasio.jpg',         label: 'Gimnasio',             cat: 'Gimnasio' },
+        { src: 'img/sala-02.jpeg',         label: 'Sala de estar',        cat: 'Sala & Comedor' },
+        { src: 'img/habitacion-01.jpeg',   label: 'Habitación 1',         cat: 'Habitaciones' },
+        { src: 'img/cocina-02.jpeg',       label: 'Cocina detalles',      cat: 'Cocina' },
+        { src: 'img/balcon-01.jpeg',       label: 'Balcón',               cat: 'Terraza & Balcón' },
+        { src: 'img/cowork area2.avif',    label: 'Área de trabajo',      cat: 'Coworking' },
+        { src: 'img/habitacion-02.jpeg',   label: 'Habitación 2',         cat: 'Habitaciones' },
+        { src: 'img/sala-03.jpeg',         label: 'Sala vista 2',         cat: 'Sala & Comedor' },
+        { src: 'img/baño-01.jpeg',         label: 'Baño',                 cat: 'Baño' },
+        { src: 'img/terraza2.jpg',         label: 'Terraza vista 2',      cat: 'Terraza' },
+        { src: 'img/habitacion-03.jpeg',   label: 'Habitación 3',         cat: 'Habitaciones' },
+        { src: 'img/cowork area3.avif',    label: 'Espacio coworking',    cat: 'Coworking' },
+        { src: 'img/cocina-03.jpeg',       label: 'Cocina vista 3',       cat: 'Cocina' },
+        { src: 'img/Entrada-01.jpeg',      label: 'Entrada',              cat: 'Entrada & Lobby' },
+        { src: 'img/Lobby edificio.jpg',   label: 'Lobby del edificio',   cat: 'Entrada & Lobby' },
+        { src: 'img/habitacion-04.jpeg',   label: 'Habitación 4',         cat: 'Habitaciones' },
+        { src: 'img/sala-04.jpeg',         label: 'Sala vista 3',         cat: 'Sala & Comedor' },
+        { src: 'img/juegos-01.jpg',        label: 'Área infantil',        cat: 'Gimnasio & Juegos' },
+        { src: 'img/cowork area4.avif',    label: 'Coworking detalle',    cat: 'Coworking' },
+        { src: 'img/baño.jpg',             label: 'Baño completo',        cat: 'Baño' },
+        { src: 'img/cocina-01.jpeg',       label: 'Cocina vista 4',       cat: 'Cocina' },
+      ];
+      const wrapper = document.getElementById('carWrapper');
+      const dotsEl  = document.getElementById('carDots');
+      const labelEl = document.getElementById('carLabel');
+      const cntEl   = document.getElementById('carCounter');
+      const prevBtn = document.getElementById('carPrev');
+      const nextBtn = document.getElementById('carNext');
+      let current = 0, timer = null;
+      const N = slides.length;
+
+      slides.forEach((s, i) => {
+        const div = document.createElement('div');
+        div.className = 'car-slide' + (i === 0 ? ' active' : '');
+        div.innerHTML = `<img src="${s.src}" alt="${s.label}" loading="${i < 3 ? 'eager' : 'lazy'}">`;
+        wrapper.insertBefore(div, wrapper.querySelector('.car-overlay'));
+      });
+
+      const DOT_COUNT = 12;
+      for (let i = 0; i < DOT_COUNT; i++) {
+        const d = document.createElement('button');
+        d.className = 'car-dot' + (i === 0 ? ' active' : '');
+        d.setAttribute('aria-label', `Slide ${i + 1}`);
+        const target = Math.round(i * N / DOT_COUNT);
+        d.addEventListener('click', () => goTo(target));
+        dotsEl.appendChild(d);
+      }
+
+      function update() {
+        const s = slides[current];
+        labelEl.textContent = s.cat;
+        cntEl.textContent   = `${current + 1} / ${N}`;
+        wrapper.querySelectorAll('.car-slide').forEach((sl, i) => sl.classList.toggle('active', i === current));
+        const di = Math.min(Math.round(current * DOT_COUNT / N), DOT_COUNT - 1);
+        dotsEl.querySelectorAll('.car-dot').forEach((d, i) => d.classList.toggle('active', i === di));
+      }
+
+      function goTo(n) { current = (n + N) % N; update(); resetTimer(); }
+      function resetTimer() { clearInterval(timer); timer = setInterval(() => goTo(current + 1), 5000); }
+
+      prevBtn.addEventListener('click', () => goTo(current - 1));
+      nextBtn.addEventListener('click', () => goTo(current + 1));
+
+      let tx = 0;
+      wrapper.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+      wrapper.addEventListener('touchend',   e => { if (Math.abs(tx - e.changedTouches[0].clientX) > 50) goTo(current + (tx > e.changedTouches[0].clientX ? 1 : -1)); });
+
+      update();
+      resetTimer();
+    })();
+
+    /* GALLERY + LIGHTBOX */
+    (function() {
+      const cards   = Array.from(document.querySelectorAll('.gal-card'));
+      const pills   = document.querySelectorAll('.gal-pill');
+      const lb      = document.getElementById('lb');
+      const lbImg   = document.getElementById('lbImg');
+      const lbCat   = document.getElementById('lbCat');
+      const lbLabel = document.getElementById('lbLabel');
+      const lbCnt   = document.getElementById('lbCounter');
+      const lbClose = document.getElementById('lbClose');
+      const lbPrev  = document.getElementById('lbPrev');
+      const lbNext  = document.getElementById('lbNext');
+      let currentFilter = 'all', currentIndex = 0, visibleCards = [];
+
+      function applyFilter(f) {
+        currentFilter = f; visibleCards = [];
+        cards.forEach(c => { const m = f === 'all' || c.dataset.cat === f; c.classList.toggle('hidden', !m); if (m) visibleCards.push(c); });
+        pills.forEach(p => p.classList.toggle('active', p.dataset.filter === f));
+      }
+
+      pills.forEach(p => p.addEventListener('click', () => applyFilter(p.dataset.filter)));
+      applyFilter('all');
+
+      function renderLb() {
+        const card = visibleCards[currentIndex];
+        if (!card) return;
+        lbImg.classList.add('fading');
+        setTimeout(() => { lbImg.src = card.dataset.src; lbImg.alt = card.dataset.label; lbImg.classList.remove('fading'); }, 180);
+        lbCat.textContent   = card.querySelector('.gal-badge').textContent.trim();
+        lbLabel.textContent = card.dataset.label;
+        lbCnt.textContent   = `${currentIndex + 1} / ${visibleCards.length}`;
+        lbPrev.disabled = currentIndex === 0;
+        lbNext.disabled = currentIndex === visibleCards.length - 1;
+      }
+
+      function openLb(card) { currentIndex = visibleCards.indexOf(card); renderLb(); lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
+      function closeLb()    { lb.classList.remove('open'); document.body.style.overflow = ''; lbImg.src = ''; }
+      function goTo(d)      { const n = currentIndex + d; if (n >= 0 && n < visibleCards.length) { currentIndex = n; renderLb(); } }
+
+      cards.forEach(c => c.addEventListener('click', () => openLb(c)));
+      lbClose.addEventListener('click', closeLb);
+      lbPrev.addEventListener('click', () => goTo(-1));
+      lbNext.addEventListener('click', () => goTo(1));
+      lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+      document.addEventListener('keydown', e => {
+        if (!lb.classList.contains('open')) return;
+        if (e.key === 'Escape') closeLb();
+        if (e.key === 'ArrowLeft') goTo(-1);
+        if (e.key === 'ArrowRight') goTo(1);
+      });
+      let tsx = 0;
+      lb.addEventListener('touchstart', e => { tsx = e.touches[0].clientX; }, { passive: true });
+      lb.addEventListener('touchend',   e => { if (Math.abs(tsx - e.changedTouches[0].clientX) > 50) goTo(tsx > e.changedTouches[0].clientX ? 1 : -1); });
+    })();
+  </script>
+</body>
+</html>
