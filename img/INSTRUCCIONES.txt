@@ -1,0 +1,28 @@
+GALERÍA — FOTOS DEL APARTAMENTO
+════════════════════════════════════════════════════════
+
+Guarda aquí las fotos con EXACTAMENTE estos nombres:
+
+  sala.jpg            →  Sala de estar (aparece grande, 2 columnas)
+  vista-volcan.jpg    →  Vista al volcán Santa María
+  habitacion.jpg      →  Habitación principal
+  terraza.jpg         →  Terraza privada
+  cocina.jpg          →  Cocina & Comedor (aparece grande, 2 columnas)
+
+RECOMENDACIONES DE FORMATO
+────────────────────────────────────────────
+· Formato:      JPG o WEBP  (PNG también funciona, cambia la extensión en index.html)
+· Resolución:   mínimo 1200 × 800 px  (idealmente 1920 × 1080 px)
+· Orientación:  horizontal (landscape) para mejor encuadre
+· Peso máximo:  2 MB por foto  (usa https://squoosh.app para comprimir sin perder calidad)
+
+AGREGAR MÁS FOTOS
+────────────────────────────────────────────
+Para añadir celdas extra a la galería, copia este bloque en index.html
+dentro de <div class="gallery-grid reveal"> y cambia el nombre del archivo:
+
+  <div class="g-item">
+    <img class="g-img" src="img/TU-FOTO.jpg" alt="Descripción"
+         onerror="this.style.opacity='0'">
+    <div class="g-overlay"><span>Etiqueta</span></div>
+  </div>
