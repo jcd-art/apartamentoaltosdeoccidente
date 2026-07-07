@@ -267,6 +267,30 @@
     .f-bottom p{font-size:.7rem;color:#555}
     .f-xela{font-size:.6rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-l);opacity:.55}
 
+    /* TARIFAS */
+    #tarifas{background:var(--bg)}
+    .tarifa-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-top:56px;max-width:800px;margin-left:auto;margin-right:auto}
+    .tarifa-card{background:#fff;border:1px solid rgba(184,146,78,.15);padding:52px 44px;position:relative;transition:box-shadow var(--t) var(--ease),border-color var(--t) var(--ease)}
+    .tarifa-card:hover{border-color:rgba(184,146,78,.3);box-shadow:0 20px 60px rgba(0,0,0,.08)}
+    .tarifa-card--feat{background:var(--gold);border-color:var(--gold)}
+    .tarifa-card--feat:hover{box-shadow:0 20px 60px rgba(184,146,78,.3)}
+    .tarifa-best{position:absolute;top:-15px;left:50%;transform:translateX(-50%);font-size:.52rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;background:var(--text);color:#fff;padding:6px 20px;white-space:nowrap}
+    .tarifa-label{font-size:.62rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:40px;display:block}
+    .tarifa-card--feat .tarifa-label{color:rgba(255,255,255,.7)}
+    .tarifa-row{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:22px 0;border-bottom:1px solid rgba(184,146,78,.1)}
+    .tarifa-card--feat .tarifa-row{border-bottom-color:rgba(255,255,255,.15)}
+    .tarifa-row:last-child{border-bottom:none}
+    .tarifa-price{font-family:var(--serif);font-size:2.9rem;font-weight:300;color:var(--text);line-height:1}
+    .tarifa-card--feat .tarifa-price{color:#fff}
+    .tarifa-who{font-size:.72rem;font-weight:500;letter-spacing:.08em;color:var(--muted2);text-align:right;line-height:1.5}
+    .tarifa-card--feat .tarifa-who{color:rgba(255,255,255,.72)}
+    .tarifa-per{display:block;font-size:.6rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted2);margin-top:28px}
+    .tarifa-card--feat .tarifa-per{color:rgba(255,255,255,.5)}
+    .tarifa-foot{text-align:center;margin-top:44px;display:flex;flex-direction:column;align-items:center;gap:22px}
+    .tarifa-foot p{font-size:.8rem;color:var(--muted)}
+    .tarifa-foot strong{color:var(--text)}
+    @media(max-width:600px){.tarifa-grid{grid-template-columns:1fr}.tarifa-card{padding:38px 28px}}
+
     /* MAP */
     .map-wrap{margin-top:48px}
     .map-frame{width:100%;height:380px;border:none;display:block;filter:grayscale(15%)}
@@ -337,6 +361,7 @@
     <a href="#amenidades"  onclick="closeMob()">Amenidades</a>
     <a href="#carrusel"    onclick="closeMob()">Galería</a>
     <a href="#reglas"      onclick="closeMob()">Reglas</a>
+    <a href="#tarifas"     onclick="closeMob()">Tarifas</a>
     <a href="#contacto"    onclick="closeMob()">Reservar</a>
   </div>
 
@@ -350,6 +375,7 @@
       <li><a href="#amenidades">Amenidades</a></li>
       <li><a href="#carrusel">Galería</a></li>
       <li><a href="#reglas">Reglas</a></li>
+      <li><a href="#tarifas">Tarifas</a></li>
       <li><a href="#contacto" class="nav-cta">Reservar</a></li>
     </ul>
     <div class="hamburger" id="hbg" onclick="toggleMob()">
@@ -762,10 +788,9 @@
         <div class="reg-card">
           <div class="reg-card-head">
             <div class="reg-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12.55a11 11 0 0114.08 0"/><path d="M1.42 9a16 16 0 0121.16 0"/><path d="M8.53 16.11a6 6 0 016.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg></div>
-            <h3>WiFi</h3>
+            <h3>Internet</h3>
           </div>
-          <div class="reg-wifi"><strong>Red</strong>CLARO_5GHz_23FD50</div>
-          <div class="reg-wifi" style="margin-top:8px;"><strong>Contraseña</strong>*DayZAt+=Kv6UxN</div>
+          <p>Servicio de internet de alta velocidad disponible durante toda tu estadía. Las credenciales de acceso se comparten al momento del check-in.</p>
         </div>
 
         <div class="reg-card">
@@ -860,7 +885,7 @@
           <div class="d-num">02</div>
           <div class="d-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
           <h3>Trato completamente personalizado</h3>
-          <p>Puedes hacer preguntas reales, pedir arreglos especiales y negociar estadías a tu medida.</p>
+          <p>Hablas con el propietario directamente. Puedes hacer preguntas reales, pedir arreglos especiales y negociar estadías a tu medida.</p>
         </div>
         <div class="d-card reveal d2">
           <div class="d-num">03</div>
@@ -868,6 +893,48 @@
           <h3>Comunicación directa e inmediata</h3>
           <p>Sin tickets ni chatbots. Un mensaje de WhatsApp y tienes respuesta real. Antes, durante y después de tu estadía.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TARIFAS -->
+  <section id="tarifas">
+    <div class="container">
+      <div class="s-header s-header--c reveal">
+        <span class="label">Reserva directa</span>
+        <h2 class="s-title" style="font-size:clamp(2rem,4vw,3rem);margin-top:16px;">Tarifas</h2>
+        <p style="font-size:.84rem;color:var(--muted);margin-top:16px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.85;">Precios en Quetzales guatemaltecos · Sin comisiones · Trato directo</p>
+      </div>
+      <div class="tarifa-grid">
+        <div class="tarifa-card reveal d1">
+          <span class="tarifa-label">1 noche</span>
+          <div class="tarifa-row">
+            <span class="tarifa-price">Q400</span>
+            <span class="tarifa-who">1 persona</span>
+          </div>
+          <div class="tarifa-row">
+            <span class="tarifa-price">Q450</span>
+            <span class="tarifa-who">2 – 5<br>personas</span>
+          </div>
+          <span class="tarifa-per">por noche</span>
+        </div>
+        <div class="tarifa-card tarifa-card--feat reveal d2">
+          <div class="tarifa-best">Mejor valor</div>
+          <span class="tarifa-label">2 noches o más</span>
+          <div class="tarifa-row">
+            <span class="tarifa-price">Q350</span>
+            <span class="tarifa-who">1 persona</span>
+          </div>
+          <div class="tarifa-row">
+            <span class="tarifa-price">Q400</span>
+            <span class="tarifa-who">2 – 5<br>personas</span>
+          </div>
+          <span class="tarifa-per">por noche</span>
+        </div>
+      </div>
+      <div class="tarifa-foot reveal d3">
+        <p>Capacidad máxima <strong>5 personas</strong> · Incluye todas las amenidades del apartamento</p>
+        <a href="#contacto" class="btn btn-gold">Consultar disponibilidad</a>
       </div>
     </div>
   </section>
