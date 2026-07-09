@@ -267,6 +267,22 @@
     .f-bottom p{font-size:.7rem;color:#555}
     .f-xela{font-size:.6rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-l);opacity:.55}
 
+    /* DISPONIBILIDAD */
+    #disponibilidad{background:var(--bg2)}
+    .cal-wrap{margin-top:52px;background:#fff;border:1px solid rgba(184,146,78,.15);box-shadow:0 12px 56px rgba(0,0,0,.07);overflow:hidden;position:relative}
+    .cal-wrap::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--gold),var(--gold-l));z-index:1}
+    .cal-wrap iframe{width:100%;height:600px;border:none;display:block}
+    .cal-note{display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:22px;padding:18px 28px;background:#fff;border:1px solid rgba(184,146,78,.1)}
+    .cal-note-item{display:flex;align-items:center;gap:9px;font-size:.72rem;color:var(--muted);font-weight:500;letter-spacing:.05em}
+    .cal-dot{width:12px;height:12px;border-radius:50%;flex-shrink:0}
+    .cal-dot--libre{background:#34c75a}
+    .cal-dot--ocupado{background:#e84646}
+    .cal-cta{margin-top:56px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px}
+    .cal-cta-text{font-family:var(--serif);font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:300;color:var(--text);margin-bottom:12px;line-height:1.4}
+    .cal-cta-text em{font-style:italic;color:var(--gold)}
+    .cal-cta-sub{font-size:.82rem;color:var(--muted);margin-bottom:24px;line-height:1.7}
+    @media(max-width:768px){.cal-wrap iframe{height:480px}.cal-note{gap:16px}}
+
     /* TARIFAS */
     #tarifas{background:var(--bg)}
     .tarifa-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-top:56px;max-width:800px;margin-left:auto;margin-right:auto}
@@ -360,8 +376,9 @@
     <a href="#apartamento" onclick="closeMob()">El Apartamento</a>
     <a href="#amenidades"  onclick="closeMob()">Amenidades</a>
     <a href="#carrusel"    onclick="closeMob()">Galería</a>
-    <a href="#reglas"      onclick="closeMob()">Reglas</a>
-    <a href="#tarifas"     onclick="closeMob()">Tarifas</a>
+    <a href="#reglas"         onclick="closeMob()">Reglas</a>
+    <a href="#disponibilidad" onclick="closeMob()">Disponibilidad</a>
+    <a href="#tarifas"        onclick="closeMob()">Tarifas</a>
     <a href="#contacto"    onclick="closeMob()">Reservar</a>
   </div>
 
@@ -375,6 +392,7 @@
       <li><a href="#amenidades">Amenidades</a></li>
       <li><a href="#carrusel">Galería</a></li>
       <li><a href="#reglas">Reglas</a></li>
+      <li><a href="#disponibilidad">Disponibilidad</a></li>
       <li><a href="#tarifas">Tarifas</a></li>
       <li><a href="#contacto" class="nav-cta">Reservar</a></li>
     </ul>
@@ -893,6 +911,43 @@
           <h3>Comunicación directa e inmediata</h3>
           <p>Sin tickets ni chatbots. Un mensaje de WhatsApp y tienes respuesta real. Antes, durante y después de tu estadía.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DISPONIBILIDAD -->
+  <section id="disponibilidad">
+    <div class="container">
+      <div class="s-header s-header--c reveal">
+        <span class="label">Actualizado en tiempo real</span>
+        <h2 class="s-title" style="font-size:clamp(2rem,4vw,3rem);margin-top:16px;">Disponibilidad</h2>
+        <p style="font-size:.86rem;color:var(--muted);margin-top:18px;max-width:540px;margin-left:auto;margin-right:auto;line-height:1.9;">Consulta las fechas disponibles. El calendario se actualiza automáticamente con cada reserva confirmada.</p>
+      </div>
+      <div class="cal-wrap reveal d1">
+        <iframe src="https://calendar.google.com/calendar/embed?src=altosexecutivestay%40gmail.com&ctz=America%2FGuatemala&mode=MONTH&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0" height="600" frameborder="0" scrolling="no" allowfullscreen loading="lazy" title="Disponibilidad Altos Executive Stay"></iframe>
+      </div>
+      <div class="cal-note reveal d2">
+        <div class="cal-note-item">
+          <span class="cal-dot cal-dot--libre"></span>
+          Fechas disponibles
+        </div>
+        <div class="cal-note-item">
+          <span class="cal-dot cal-dot--ocupado"></span>
+          Fechas ocupadas
+        </div>
+        <div class="cal-note-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--gold)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Reservas solo vía WhatsApp directo
+        </div>
+      </div>
+      <div class="cal-cta reveal d3">
+        <p class="cal-cta-text">¿Encontraste tus <em>fechas ideales?</em></p>
+        <p class="cal-cta-sub">Escríbenos por WhatsApp y confirmamos tu reserva en minutos.<br>Sin formularios, sin esperas — trato directo con el propietario.</p>
+        <a class="wa-cta-btn" href="https://wa.me/50255754021?text=Hola!%20Vi%20el%20calendario%20y%20me%20interesan%20unas%20fechas%20en%20Altos%20Executive%20Stay" target="_blank" rel="noopener noreferrer">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Consultar disponibilidad
+        </a>
+        <p class="wa-cta-note">+502 5575-4021 &nbsp;·&nbsp; Respondemos en menos de 2 horas</p>
       </div>
     </div>
   </section>
