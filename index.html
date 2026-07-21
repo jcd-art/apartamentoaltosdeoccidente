@@ -324,6 +324,28 @@
     .alr-tag{font-size:.58rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:6px 14px;border:1px solid rgba(184,146,78,.22);color:var(--muted2)}
     @media(max-width:768px){.alr-main{flex-direction:column;gap:20px;padding:28px 24px}}
 
+    /* ALR SUB */
+    .alr-sub{margin-top:3px;background:#fff;border:1px solid rgba(184,146,78,.1);padding:26px 44px;display:flex;align-items:center;gap:24px;transition:box-shadow var(--t) var(--ease)}
+    .alr-sub:hover{box-shadow:0 8px 28px rgba(0,0,0,.05)}
+    .alr-sub-icon{width:44px;height:44px;border:1px solid rgba(184,146,78,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);flex-shrink:0}
+    .alr-sub h4{font-family:var(--serif);font-size:1.2rem;font-weight:400;color:var(--text);margin-bottom:4px}
+    .alr-sub p{font-size:.8rem;color:var(--muted);line-height:1.65}
+
+    /* TARIFA EXTRAS */
+    .tarifa-extras{margin-top:3px;display:grid;grid-template-columns:1fr 1fr;gap:3px;max-width:800px;margin-left:auto;margin-right:auto}
+    .tarifa-extra-card{background:#fff;border:1px solid rgba(184,146,78,.15);padding:36px 38px}
+    .tarifa-extra-head{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+    .tarifa-extra-icon{width:44px;height:44px;border:1px solid rgba(184,146,78,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);flex-shrink:0}
+    .tarifa-extra-card h4{font-family:var(--serif);font-size:1.2rem;font-weight:400;color:var(--text)}
+    .tarifa-extra-card p{font-size:.8rem;color:var(--muted);line-height:1.78}
+    .tarifa-extra-card strong{color:var(--text2)}
+    .compra-click{display:inline-flex;align-items:stretch;border:2px solid #cc1a1a;overflow:hidden;margin-top:20px}
+    .cc-left{padding:9px 15px;display:flex;align-items:center}
+    .cc-left span{font-size:.85rem;font-weight:800;color:#cc1a1a;letter-spacing:-.01em;font-family:var(--sans)}
+    .cc-right{background:#cc1a1a;padding:8px 13px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px}
+    .cc-right small{font-size:.44rem;font-weight:700;letter-spacing:.07em;color:#fff;text-transform:uppercase;line-height:1.25;text-align:center;display:block}
+    @media(max-width:640px){.alr-sub{flex-direction:column;align-items:flex-start;padding:24px 20px}.tarifa-extras{grid-template-columns:1fr}}
+
     /* WA FLOAT */
     .wa-btn{position:fixed;bottom:30px;right:30px;z-index:300;width:56px;height:56px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 22px rgba(37,211,102,.38);transition:transform var(--t),box-shadow var(--t);animation:waPulse 2.8s ease-in-out infinite}
     .wa-btn:hover{transform:scale(1.12);box-shadow:0 8px 34px rgba(37,211,102,.55);animation:none}
@@ -881,6 +903,16 @@
           </div>
         </div>
       </div>
+      <div class="alr-sub reveal d2">
+        <div class="alr-sub-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+        </div>
+        <div>
+          <span class="label" style="margin-bottom:6px;">A 3 minutos caminando</span>
+          <h4>Futeca &amp; Futeca Pool</h4>
+          <p>Canchas de fútbol 5 y mesas de billar — entretenimiento deportivo a pasos del apartamento.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -927,12 +959,22 @@
         <iframe src="https://calendar.google.com/calendar/embed?src=altosexecutivestay%40gmail.com&ctz=America%2FGuatemala&mode=MONTH&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0" height="600" frameborder="0" scrolling="no" allowfullscreen loading="lazy" title="Disponibilidad Altos Executive Stay"></iframe>
       </div>
       <div class="cal-note reveal d2">
+        <div class="cal-note-item">
+          <span class="cal-dot cal-dot--libre"></span>
+          Fechas disponibles
+        </div>
+        <div class="cal-note-item">
+          <span class="cal-dot cal-dot--ocupado"></span>
+          Fechas ocupadas
+        </div>
+        <div class="cal-note-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="color:var(--gold)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           Reservas solo vía WhatsApp directo
         </div>
       </div>
       <div class="cal-cta reveal d3">
         <p class="cal-cta-text">¿Encontraste tus <em>fechas ideales?</em></p>
-        <p class="cal-cta-sub">Escríbenos por WhatsApp y confirmamos tu reserva en minutos.<br>Sin formularios, sin esperas. </p>
+        <p class="cal-cta-sub">Escríbenos por WhatsApp y confirmamos tu reserva en minutos.<br>Sin formularios, sin esperas — trato directo con el propietario.</p>
         <a class="wa-cta-btn" href="https://wa.me/50255754021?text=Hola!%20Vi%20el%20calendario%20y%20me%20interesan%20unas%20fechas%20en%20Altos%20Executive%20Stay" target="_blank" rel="noopener noreferrer">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Consultar disponibilidad
@@ -980,6 +1022,33 @@
       <div class="tarifa-foot reveal d3">
         <p>Capacidad máxima <strong>5 personas</strong> · Incluye todas las amenidades del apartamento</p>
         <a href="#contacto" class="btn btn-gold">Consultar disponibilidad</a>
+      </div>
+      <div class="tarifa-extras reveal d4">
+        <div class="tarifa-extra-card">
+          <div class="tarifa-extra-head">
+            <div class="tarifa-extra-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/><circle cx="12" cy="16" r="1" fill="currentColor"/></svg>
+            </div>
+            <h4>Reserva tu espacio</h4>
+          </div>
+          <p>Para confirmar tu reservación se requiere un adelanto de <strong>Q100.00</strong>. Este monto <strong>no es reembolsable</strong> en caso de cancelación, pero se <strong>deducirá de tu pago total</strong> al momento del check-in.</p>
+        </div>
+        <div class="tarifa-extra-card">
+          <div class="tarifa-extra-head">
+            <div class="tarifa-extra-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </div>
+            <h4>Métodos de pago</h4>
+          </div>
+          <p>Aceptamos <strong>transferencia o depósito bancario</strong> y pagos con <strong>tarjeta de débito o crédito</strong> a través de Compra-Click de BAC Credomatic.</p>
+          <div class="compra-click">
+            <div class="cc-left"><span>Compra-Click</span></div>
+            <div class="cc-right">
+              <svg width="18" height="16" viewBox="0 0 24 20" fill="none" stroke="#fff" stroke-width="1.6"><path d="M3 19V9L12 1l9 8v10H3z"/><rect x="8" y="12" width="8" height="7"/></svg>
+              <small>BAC<br>CREDOMATIC</small>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
